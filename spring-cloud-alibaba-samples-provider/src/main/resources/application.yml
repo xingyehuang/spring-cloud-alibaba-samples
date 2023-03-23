@@ -8,7 +8,6 @@ spring:
       config:
         file-extension: yml
   config:
-    import:
-      - optional:nacos:${spring.application.name}.${spring.cloud.nacos.config.file-extension}
+    import: nacos:${spring.application.name}.${spring.cloud.nacos.config.file-extension}
 server:
   port: 9000
