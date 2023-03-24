@@ -1,14 +1,13 @@
 spring:
   application:
-    name: provider
+    name: customer
   cloud:
     nacos:
       discovery:
         server-addr: 121.37.247.88:8848
       config:
-#        file-extension: yaml
         server-addr: 121.37.247.88:8848
 #  config:
 #    import: nacos:${spring.application.name}.${spring.cloud.nacos.config.file-extension}
 server:
-  port: 9000
+  port: 9001
