@@ -8,6 +8,9 @@ spring:
       config:
 #        file-extension: yaml
         server-addr: 121.37.247.88:8848
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8080
 #  config:
 #    import: nacos:${spring.application.name}.${spring.cloud.nacos.config.file-extension}
 server:
