@@ -12,3 +12,6 @@ spring:
 #    import: nacos:${spring.application.name}.${spring.cloud.nacos.config.file-extension}
 server:
   port: 9000
+dubbo:
+  registry:
+    address: nacos://121.37.247.88:8848
