@@ -10,6 +10,7 @@
         <module name="spring-cloud-alibaba-samples-common" />
         <module name="spring-cloud-alibaba-samples-provider" />
         <module name="spring-cloud-alibaba-samples-customer" />
+        <module name="spring-cloud-alibaba-samples-gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />

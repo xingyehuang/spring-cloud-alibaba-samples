@@ -12,6 +12,7 @@
         <module>spring-cloud-alibaba-samples-common</module>
         <module>spring-cloud-alibaba-samples-customer</module>
         <module>spring-cloud-alibaba-samples-provider</module>
+        <module>spring-cloud-alibaba-samples-gateway</module>
     </modules>
 
     <properties>
