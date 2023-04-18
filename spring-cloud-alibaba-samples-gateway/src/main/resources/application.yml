@@ -8,15 +8,24 @@ spring:
       config:
 #        file-extension: yaml
         server-addr: 121.37.247.88:8848
-    sentinel:
-      transport:
-        dashboard: 127.0.0.1:8080
+#    sentinel:
+#      transport:
+#        dashboard: 127.0.0.1:8080
     gateway:
+      discovery:
+        locator:
+          enabled: true
+#          lower-case-service-id: true
+
       routes:
         - id: customer
           uri: lb://customer
+#          uri: http://127.0.0.1:9001
           predicates:
             - Path=/customer/**
+      filter:
+        hystrix:
+          enabled: false
 #  config:
 #    import: nacos:${spring.application.name}.${spring.cloud.nacos.config.file-extension}
 server:

@@ -26,4 +26,6 @@ public class EchoController {
     public String dubboEcho(@RequestParam("name") String name) {
         return echoService.echo(name);
     }
+
+
 }
