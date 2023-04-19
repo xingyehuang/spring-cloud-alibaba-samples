@@ -18,11 +18,11 @@ public class EchoController {
     @DubboReference
     EchoService echoService;
 
-    @GetMapping("/test")
+    @GetMapping("/feignEcho")
     public String echo(@RequestParam("name") String name) {
         return echoFeign.echo(name);
     }
-    @GetMapping("/dubbo/test")
+    @GetMapping("/dubboEcho")
     public String dubboEcho(@RequestParam("name") String name) {
         return echoService.echo(name);
     }
