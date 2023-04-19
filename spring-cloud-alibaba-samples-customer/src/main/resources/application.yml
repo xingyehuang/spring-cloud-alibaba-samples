@@ -4,7 +4,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 192.168.255.10:8848
+        server-addr: 127.0.0.1:8848
 #      config:
 #        server-addr: 121.37.247.88:8848
 #  config:
@@ -13,4 +13,4 @@ server:
   port: 9003
 dubbo:
   registry:
-    address: nacos://192.168.255.10:8848
+    address: nacos://127.0.0.1:8848

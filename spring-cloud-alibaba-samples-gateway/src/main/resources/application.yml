@@ -1,29 +1,41 @@
+server:
+  port: 9002
 spring:
   application:
     name: gateway
   cloud:
     nacos:
       discovery:
-        server-addr: 192.168.255.10:8848
-#      config:
-##        file-extension: yaml
-#        server-addr: 121.37.247.88:8848
-#    sentinel:
-#      transport:
-#        dashboard: 127.0.0.1:8080
+        server-addr: 127.0.0.1:8848
+    #      config:
+    ##        file-extension: yaml
+    #        server-addr: 121.37.247.88:8848
+    #    sentinel:
+    #      transport:
+    #        dashboard: 127.0.0.1:8080
     gateway:
       discovery:
         locator:
           enabled: true
           lower-case-service-id: true
 
-#      routes:
-#        - id: customer
-#          uri: lb://customer
-##          uri: http://127.0.0.1:9001
-#          predicates:
-#            - Path=/customer/**
+      routes:
+        ##        - id: customer
+        ##          uri: lb://customer
+        ##          predicates:
+        ##            - Path=/customer/**
+        - id: cookie_route
+          uri: http://127.0.0.1:9003
+          predicates:
+            - Cookie=chocolate, chp
+        - id: header_route
+          uri: lb://customer
+          predicates:
+            - Header=X-Request-Id, \d+
+        - id: host_route
+          uri: lb://customer
+          predicates:
+            - Host=**.baidu.com
 #  config:
 #    import: nacos:${spring.application.name}.${spring.cloud.nacos.config.file-extension}
-server:
-  port: 9002
+
